@@ -57,6 +57,16 @@ button:disabled {
   justify-content: space-between;
 }
 
+.evenly-flex-end {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.evenly-flex-wrap {
+  flex-wrap: wrap;
+}
+
 .container {
   height: 100vh;
 }
@@ -159,7 +169,7 @@ button:disabled {
       align-items: center;
       justify-content: center;
 
-      .add-friend-button-icon {
+      .add-friend-icon {
         color: #ADB5BD;
         font-weight: 700;
         font-size: 20px;
@@ -169,6 +179,7 @@ button:disabled {
     &.no-friends {
       width: 100%;
       gap: 56px;
+      cursor: default;
 
       p {
         font-weight: 500;
@@ -177,7 +188,7 @@ button:disabled {
       .avatar {
         border: 4px dashed cornflowerblue;
 
-        .add-friend-button-icon {
+        .add-friend-icon {
           font-size: 24px;
         }
       }
@@ -196,9 +207,11 @@ button:disabled {
 
   .info {
     color: white;
+    font-size: 14px;
     width: calc((100% - 100% / 3) - 30px);
 
     .friend-name {
+      font-size: 1rem;
       font-weight: 700;
     }
 
@@ -210,10 +223,18 @@ button:disabled {
       /* color: aquamarine; */
       color: lightgreen;
     }
+
+    .settled {
+      color: lightgoldenrodyellow;
+    }
   }
 
   .select-friend {
     /* flex-shrink: 0; */
+  }
+
+  button.evenly-button-icon {
+    color: #343A40;
   }
 }
 
@@ -297,13 +318,14 @@ button:disabled {
       align-items: center;
       justify-content: space-between;
       gap: 10px;
+      margin-top: 30px;
     }
   }
 
   .split-form {
     /* background-color: violet; */
     margin: auto;
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
     width: 50%;
     /* flex-grow: 1; */
     display: grid;
@@ -347,7 +369,7 @@ button:disabled {
 
   &:focus-visible {
     /* outline: unset; */
-    outline: 2px solid royalblue;
+    outline: 2px solid royalblue !important;
   }
 
   &:active {
@@ -373,6 +395,10 @@ button:disabled {
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
+
+  &:focus-visible {
+    outline: 2px solid royalblue !important;
+  }
 }
 
 .evenly-button-icon {
